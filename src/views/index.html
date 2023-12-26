@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File metadata</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1>File metadata</h1>
+
+        <div class="row">
+          <form
+            class="col"
+            action="/api/fileanalyse"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2>Get metadata</h2>
+
+            <label class="form-label" for="upfile">Choose a file</label>
+            <input
+              class="form-control"
+              type="file"
+              id="upfile"
+              name="upfile"
+              required
+            />
+
+            <button class="btn btn-primary" type="submit">Upload</button>
+          </form>
+
+          <div class="col">
+            <h2 class="text-center">About the project</h2>
+
+            <p>
+              This is a file metadata parser designed as a solution to
+              FreeCodeCamp's
+              <a
+                href="https://www.freecodecamp.org/learn/back-end-development-and-apis/#back-end-development-and-apis-projects"
+                >Back End Development and APIs Certification</a
+              >.
+            </p>
+
+            <p>
+              The purpose of this API is to recieve a file and return some of
+              it's properties &mdash; filename, mimetype and size in bytes. The
+              client should send a POST request to
+              <code>/api/fileanalyse</code> containing the file in a multipart
+              form. If the data is not sent as a multipart form or the file is
+              missing, the server responds with a 400 and a message describing
+              the error. In any other error case, the server responds with a 500
+              and a message describing the error.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
